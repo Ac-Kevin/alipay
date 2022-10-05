@@ -391,9 +391,10 @@ func (this FundTransUniTransfer) Params() map[string]string {
 }
 
 type PayeeInfo struct {
-	Identity     string `json:"identity"`      // 必填 参与方的唯一标识
-	IdentityType string `json:"identity_type"` // 必填 参与方的标识类型，目前支持如下类型： 1、ALIPAY_USER_ID 支付宝的会员ID 2、ALIPAY_LOGON_ID：支付宝登录号，支持邮箱和手机号格式
-	Name         string `json:"name"`          // 可选 参与方真实姓名，如果非空，将校验收款支付宝账号姓名一致性。当identity_type=ALIPAY_LOGON_ID时，本字段必填。
+	Identity        string `json:"identity"`          // 必填 参与方的唯一标识
+	IdentityType    string `json:"identity_type"`     // 必填 参与方的标识类型，目前支持如下类型： 1、ALIPAY_USER_ID 支付宝的会员ID 2、ALIPAY_LOGON_ID：支付宝登录号，支持邮箱和手机号格式
+	Name            string `json:"name"`              // 可选 参与方真实姓名，如果非空，将校验收款支付宝账号姓名一致性。当identity_type=ALIPAY_LOGON_ID时，本字段必填。
+	BankcardExtInfo string `json:"bankcard_ext_info"` // 可选 收款方银行卡扩展信息
 }
 
 // FundTransUniTransferRsp 单笔转账接口响应参数
